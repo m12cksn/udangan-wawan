@@ -11,6 +11,7 @@ import ImageBottom from "./ornaments/imageBottom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
 import Timer from "./Timer";
+import Bawah from "./ornaments/Bawah";
 
 const Mempelai = () => {
   useEffect(() => {
@@ -58,7 +59,8 @@ const Mempelai = () => {
           </h1>
         </div>
         <Top />
-        <ImageBottom />
+        {/* <ImageBottom /> */}
+        <Bawah />
       </div>
     </div>
   );

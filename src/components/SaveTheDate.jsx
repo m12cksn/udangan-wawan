@@ -14,6 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
 import Top from "./ornaments/Top";
 import ImageBottom from "./ornaments/imageBottom";
+import Bawah from "./ornaments/Bawah";
 
 const SaveTheDate = () => {
   useEffect(() => {
@@ -92,7 +93,7 @@ const SaveTheDate = () => {
             <Maps />
           </div>
           <Top />
-          <ImageBottom />
+          <Bawah />
         </div>
       </div>
     </div>

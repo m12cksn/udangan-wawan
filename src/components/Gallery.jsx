@@ -6,6 +6,7 @@ import BtmRight from "./ornaments/BtmRight";
 import TopLeft from "./ornaments/TopLeft";
 import TopRight from "./ornaments/TopRight";
 import { berkshire } from "@/app/fonts";
+import Bawah from "@/components/ornaments/Bawah";
 import ImageBottom from "./ornaments/imageBottom";
 import Top from "./ornaments/Top";
 
@@ -21,7 +22,7 @@ const Gallery = () => {
           </h1>
           <ImageGallery />
           <Top />
-          <ImageBottom />
+          <Bawah />
         </div>
       </div>
     </div>

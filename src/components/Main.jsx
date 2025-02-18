@@ -11,6 +11,7 @@ import BtmRight from "./ornaments/BtmRight";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
 import ImageBottom from "./ornaments/imageBottom";
+import Bawah from "./ornaments/Bawah";
 
 const Main = () => {
   useEffect(() => {
@@ -47,7 +48,8 @@ const Main = () => {
         <TopRight />
         <BtmLeft />
         <BtmRight /> */}
-        <ImageBottom />
+        {/* <ImageBottom /> */}
+        <Bawah />
       </div>
     </div>
   );

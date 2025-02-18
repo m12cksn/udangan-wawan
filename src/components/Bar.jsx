@@ -34,7 +34,11 @@ const Bar = () => {
     <div>
       <div className="w-80 backdrop-filter backdrop-blur-lg bg-white/90 fixed bottom-0 flex gap-5 p-2 mx-auto left-1/2 -translate-x-1/2">
         {images.map((image, index) => (
-          <Link href={image.link} className=" rounded bg-white shadow p-1">
+          <Link
+            key={index}
+            href={image.link}
+            className=" rounded bg-white shadow p-1"
+          >
             {" "}
             <Image
               className="w-20"

@@ -63,12 +63,6 @@ const Opening = ({ onButtonClick }) => {
             <h1 className="text-slate-500  text-lg text-center ">di Tempat</h1>
           </div>
           <Top />
-          {/* <ImageBottom /> */}
-          {/* <Bottom /> */}
-          {/* <TopLeft />
-          <TopRight />
-          <BtmLeft />
-          <BtmRight /> */}
         </div>
       </div>
     </div>
