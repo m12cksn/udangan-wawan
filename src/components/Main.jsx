@@ -1,16 +1,11 @@
 import React from "react";
 import { berkshire } from "@/app/fonts";
-import Image from "next/image";
+
 import { useState, useEffect } from "react";
-import Timer from "./Timer";
-import TopLeft from "@/components/ornaments/TopLeft";
-import TopRight from "./ornaments/TopRight";
-import BtmLeft from "./ornaments/BtmLeft";
-import BtmRight from "./ornaments/BtmRight";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
-import ImageBottom from "./ornaments/imageBottom";
+
 import Bawah from "./ornaments/Bawah";
 
 const Main = () => {

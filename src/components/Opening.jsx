@@ -5,13 +5,8 @@ import { useState, useEffect } from "react";
 import { berkshire } from "@/app/fonts";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
-import TopLeft from "./ornaments/TopLeft";
-import TopRight from "./ornaments/TopRight";
-import BtmLeft from "./ornaments/BtmLeft";
-import BtmRight from "./ornaments/BtmRight";
+
 import Top from "./ornaments/Top";
-import ImageBottom from "./ornaments/imageBottom";
-import Bottom from "./ornaments/Bottom";
 
 // import { animate_pulse } from "tailwindcss-animated";
 

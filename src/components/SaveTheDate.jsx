@@ -5,15 +5,12 @@ import { IoTimeOutline } from "react-icons/io5";
 import { MdOutlineShareLocation } from "react-icons/md";
 import Timer from "./Timer";
 import Maps from "./Maps";
-import TopLeft from "./ornaments/TopLeft";
-import TopRight from "./ornaments/TopRight";
-import BtmLeft from "./ornaments/BtmLeft";
-import BtmRight from "./ornaments/BtmRight";
+
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
 import Top from "./ornaments/Top";
-import ImageBottom from "./ornaments/imageBottom";
+
 import Bawah from "./ornaments/Bawah";
 
 const SaveTheDate = () => {
