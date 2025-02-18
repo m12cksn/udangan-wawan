@@ -9,7 +9,8 @@ import TopCenter from "@/components/ornaments/TopCenter";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import CSS AOS
 import Top from "./ornaments/Top";
-import ImageBottom from "./ornaments/imageBottom";
+
+import Bawah from "./ornaments/Bawah";
 
 const Section2 = () => {
   useEffect(() => {
@@ -65,7 +66,7 @@ const Section2 = () => {
         {/* <BtmLeft />
         <BtmRight /> */}
         <Top />
-        <ImageBottom />
+        <Bawah />
       </div>
     </div>
   );
