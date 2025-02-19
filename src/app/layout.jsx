@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://undanganarsyad.vercel.app/images/thumbnail.jpg",
+        url: "https://undanganarsyad.vercel.app/images/thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Undangan Arsyad",
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Undangan Arsyad",
     description: "Walimatul Khitan Arsyad Haafizh Virendra",
-    images: ["https://undanganarsyad.vercel.app/images/thumbnail.jpg"],
+    images: ["https://undanganarsyad.vercel.app/images/thumbnail.png"],
   },
 };
 
