@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Opening from "@/components/Opening";
-
+import { Suspense } from "react";
 import Main from "@/components/Main";
 import Section2 from "@/components/Section2";
 import Mempelai from "@/components/Mempelai";
@@ -29,6 +29,7 @@ export default function Home() {
     }
   };
   return (
+    // <Suspense fallback={<p>Loading . . .</p>}
     <div className="">
       {isMusicPlaying && <AudioPlayer audioSrc="music/music.MP3" />}
       {showOpening && <Opening onButtonClick={handleButtonClick} />}
@@ -43,5 +44,6 @@ export default function Home() {
       {/* <Main />
     <Section2 /> */}
     </div>
+    // <Suspense/>
   );
 }
