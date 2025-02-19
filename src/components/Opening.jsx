@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation"; // Import untuk membaca URL params
 import { berkshire } from "@/app/fonts";
@@ -8,18 +8,20 @@ import "aos/dist/aos.css";
 import Top from "./ornaments/Top";
 
 const Opening = ({ onButtonClick }) => {
-  const searchParams = useSearchParams();
   const [nama, setNama] = useState("");
 
   useEffect(() => {
     AOS.init({});
 
-    const namaDariURL = searchParams.get("nama"); // Ambil parameter "nama" dari URL
-    // Jika ada parameter "nama" di URL, gunakan sebagai nama tamu
-    if (namaDariURL) {
-      setNama(namaDariURL);
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const paramNama = searchParams.get("nama");
+
+      if (paramNama) {
+        setNama(paramNama);
+      }
     }
-  }, [searchParams]);
+  }, []);
 
   return (
     <div className="flex justify-center">
