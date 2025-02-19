@@ -25,7 +25,7 @@ const SaveTheDate = () => {
 
       day: "Minggu, 23 Februari, 2025",
       time: "Ba'da Isya",
-      alamat: "Bersama Habib Abdillah Bin Al Jilani",
+      alamat: "Bersama Habib Abdillah Bin Al Jilani - ",
     },
     {
       title: "Resepsi",
