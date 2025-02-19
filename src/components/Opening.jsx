@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation"; // Import untuk membaca URL params
 import { berkshire } from "@/app/fonts";
@@ -58,7 +58,8 @@ const Opening = ({ onButtonClick }) => {
               Bpk / Ibu / saudara / i
             </h1>
             <h1 className="text-slate-900 mb-2 text-lg text-center">
-              {namaTamu} {/* Nama tamu akan berubah sesuai input dari URL */}
+              {nama ? decodeURIComponent(nama) : ""}{" "}
+              {/* Nama tamu akan berubah sesuai input dari URL */}
             </h1>
             <h1 className="text-slate-500 text-lg text-center">di Tempat</h1>
           </div>
