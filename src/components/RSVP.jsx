@@ -1,136 +1,120 @@
 import React, { useState, useEffect } from "react";
 import { berkshire } from "@/app/fonts";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { supabase } from "@/supabaseClient"; // Import Supabase
 
 const RSVP = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  // State untuk input form
   const [nama, setNama] = useState("");
   const [pesan, setPesan] = useState("");
   const [kehadiran, setKehadiran] = useState("hadir");
+  const [texts, setTexts] = useState([]);
 
-  // State untuk menyimpan daftar ucapan
-  const [texts, setTexts] = useState([
-    {
-      message: "Semoga Menjadi Keluarga sakinah mawadah warahmah",
-      name: "Raisa",
-    },
-    {
-      message: "Maaf tidak bisa datang, semoga lancar semuanya sampai hari H",
-      name: "Adrian",
-    },
-    {
-      message: "Selamat guyss, semoga dapat hadir yaa di acara pernikahannya",
-      name: "Dimas",
-    },
-  ]);
+  // Ambil pesan dari Supabase saat halaman dibuka
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const { data, error } = await supabase
+        .from("rsvp_message")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-  // Fungsi untuk menangani submit form
-  const handleSubmit = (e) => {
-    e.preventDefault();
+      if (error) console.error("Error fetching messages:", error);
+      else setTexts(data);
+    };
 
-    // Validasi agar tidak mengirim form kosong
-    if (!nama.trim() || !pesan.trim()) {
-      alert("Nama dan Ucapan tidak boleh kosong!");
+    fetchMessages();
+  }, []);
+
+  // Simpan pesan ke database Supabase
+  const handleSubmit = async () => {
+    if (!nama || !pesan) {
+      alert("Nama dan pesan harus diisi!");
       return;
     }
 
-    // Menambahkan ucapan baru ke dalam daftar
-    setTexts([...texts, { message: pesan, name: nama }]);
+    const { data, error } = await supabase
+      .from("rsvp_message") // Pastikan nama tabel benar
+      .insert([{ name: nama, message: pesan }])
+      .select(); // Supaya data yang baru masuk langsung dikembalikan
 
-    // Mengosongkan form setelah submit
-    setNama("");
-    setPesan("");
-    setKehadiran("hadir");
+    console.log("Data:", data); // Debugging
+    console.log("Error:", error); // Debugging
+
+    if (error) {
+      console.error("Gagal menyimpan pesan:", error);
+      alert("Gagal menyimpan pesan. Coba lagi!");
+    } else {
+      setTexts([data[0], ...texts]); // Masukkan data terbaru ke state
+      setNama("");
+      setPesan("");
+    }
   };
 
   return (
     <div id="rsvp">
       <div className="flex justify-center mx-auto">
         <div className="bg-[url('/images/oke1.webp')] bg-cover relative bg-center bg-opacity-20 max-w-sm py-28 w-full flex flex-col justify-center items-center overflow-hidden px-8">
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1500"
-            className="w-full backdrop-filter backdrop-blur-lg bg-white/50 bg-center p-5 mt-3"
-          >
+          <div className="w-full backdrop-blur-lg bg-white/50 p-5 mt-3">
             <h1
-              className={`${berkshire.className} xl:text-xl text-slate-700 text-xl text-center mb-5`}
+              className={`${berkshire.className} text-xl text-slate-700 text-center mb-5`}
             >
               Konfirmasi Kehadiran
             </h1>
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-1">
-                <label className="text-slate-800" htmlFor="nama">
-                  Nama
-                </label>
-                <input
-                  type="text"
-                  id="nama"
-                  value={nama}
-                  onChange={(e) => setNama(e.target.value)}
-                  className="h-9 p-3 shadow rounded"
-                  placeholder="Your Name ...."
-                />
-              </div>
-              <div className="flex flex-col gap-1 mt-5">
-                <label className="text-slate-800" htmlFor="pesan">
-                  Ucapan dan Do'a
-                </label>
-                <textarea
-                  rows={5}
-                  id="pesan"
-                  value={pesan}
-                  onChange={(e) => setPesan(e.target.value)}
-                  className="rounded shadow p-3"
-                  placeholder="Tulis ucapan..."
-                />
-              </div>
-              <div className="flex flex-col gap-1 mt-5">
-                <label className="text-slate-800" htmlFor="kehadiran">
-                  Kehadiran
-                </label>
-                <select
-                  className="h-9 p-2"
-                  id="kehadiran"
-                  value={kehadiran}
-                  onChange={(e) => setKehadiran(e.target.value)}
-                >
-                  <option value="hadir">Hadir</option>
-                  <option value="tidak hadir">Tidak Hadir</option>
-                </select>
-              </div>
-              <div className="flex justify-start mt-5">
-                <button
-                  type="submit"
-                  className="px-5 py-1 bg-purple-500 rounded shadow text-slate-100"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+            <div className="flex flex-col gap-1">
+              <label className="text-slate-800">Nama</label>
+              <input
+                type="text"
+                value={nama}
+                onChange={(e) => setNama(e.target.value)}
+                className="h-9 p-3 shadow rounded"
+                placeholder="Your Name ...."
+              />
+            </div>
+            <div className="flex flex-col gap-1 mt-5">
+              <label className="text-slate-800">Ucapan dan Do'a</label>
+              <textarea
+                rows={5}
+                value={pesan}
+                onChange={(e) => setPesan(e.target.value)}
+                className="rounded shadow p-3"
+              />
+            </div>
+            {/* <div className="flex flex-col gap-1 mt-5">
+              <label className="text-slate-800">Kehadiran</label>
+              <select
+                className="h-9 p-2"
+                value={kehadiran}
+                onChange={(e) => setKehadiran(e.target.value)}
+              >
+                <option value="hadir">Hadir</option>
+                <option value="tidak hadir">Tidak Hadir</option>
+              </select>
+            </div> */}
+            <div className="flex justify-start mt-5">
+              <button
+                onClick={handleSubmit}
+                className="px-5 py-1 bg-purple-500 rounded shadow text-slate-100"
+              >
+                Submit
+              </button>
+            </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1500"
-            className="w-full backdrop-filter backdrop-blur-lg bg-white/50 bg-center p-5 mt-3 flex flex-col gap-3 h-96 overflow-scroll"
-          >
+          <div className="w-full backdrop-blur-lg bg-white/50 p-5 mt-3 h-96 overflow-scroll">
             <h1
-              className={`${berkshire.className} xl:text-xl text-slate-700 text-xl text-center `}
+              className={`${berkshire.className} text-xl text-slate-700 text-center mb-3`}
             >
               Ucapan Teman & Kerabat
             </h1>
-            {texts.map((text, index) => (
-              <div key={index} className="bg-white p-3 rounded">
-                <h1 className="text-slate-700">{text.message}</h1>
-                <p className="text-xs text-slate-500 mt-1">{text.name}</p>
-              </div>
-            ))}
+            {texts.length === 0 ? (
+              <p className="text-center text-gray-500 mt-5">
+                Belum ada ucapan.
+              </p>
+            ) : (
+              texts.map((text, index) => (
+                <div key={index} className="bg-white p-3 rounded">
+                  <h1 className="text-slate-700">{text.message}</h1>
+                  <p className="text-xs text-slate-900 mt-1">{text.name}</p>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

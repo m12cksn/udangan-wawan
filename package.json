@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^14.2.15",
+    "@supabase/supabase-js": "^2.48.1",
     "aos": "^3.0.0-beta.6",
     "howler": "^2.2.4",
     "next": "15.1.7",

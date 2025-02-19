@@ -31,7 +31,8 @@ const SaveTheDate = () => {
       title: "Resepsi",
       day: "Senin, 24 Februari, 2025",
       time: "at 09:00 WIB - Selesai",
-      alamat: "Jl. Slamet Riyadi, Kebonsayur - RT. 05/05",
+      alamat:
+        "Jl. Slamet Riyadi, Kebonsayur - RT. 05/05 Kelurahan Tambakreja Kecamatan, Cilacap Selatan",
     },
   ];
   return (
@@ -79,7 +80,7 @@ const SaveTheDate = () => {
                     </span>
                     {content.time}
                   </h1>
-                  <h1 className="text-center    text-slate-600  flex items-start">
+                  <h1 className="text-center  text-lg px-3 text-slate-600  flex items-start">
                     {content.alamat}
                   </h1>
                 </div>

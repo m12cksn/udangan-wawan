@@ -48,7 +48,7 @@ const Section2 = () => {
             data-aos-duration="1500"
             className="text-center text-[0.7rem] px-5 leading-normal text-slate-50 mb-7"
           >
-            Putra pertama Bpk. AWawan ruswanto & Ibu Dwi Rahmatika
+            Putra pertama Bpk. Wawan Ruswanto & Ibu Dwi Rahmatika
           </p>
           <Image
             data-aos=""
