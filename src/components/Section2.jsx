@@ -32,7 +32,7 @@ const Section2 = () => {
             className="text-center px-5 text-sm leading-normal text-slate-50 mb-5"
           >
             Dengan memohon Rahmat dan Ridho Allah SWT kami mengundang
-            Bapak/Ibu/Saudara/i untuk menghadiri Khitanan putra kami
+            Bapak/Ibu/Saudara/i untuk menghadiri Tasyakuran Khitanan putra kami
           </p>
           <h1
             data-aos=""

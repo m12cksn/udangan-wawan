@@ -21,11 +21,11 @@ const SaveTheDate = () => {
   }, []);
   const contents = [
     {
-      title: "Malam Pengajian",
+      title: "Malam pengajian & Khotmil Qur'an",
 
       day: "Minggu, 23 Februari, 2025",
       time: "Ba'da Isya",
-      alamat: "Habib Abdillah Bin Al Jilani",
+      alamat: "Bersama Habib Abdillah Bin Al Jilani",
     },
     {
       title: "Resepsi",
