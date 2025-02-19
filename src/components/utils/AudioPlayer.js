@@ -14,7 +14,7 @@ const AudioPlayer = ({ audioSrc }) => {
       soundRef.current = new Howl({
         src: [audioSrc],
         loop: true,
-        volume: 0.5,
+        volume: 0.3,
         onplay: () => setIsPlaying(true),
         onpause: () => setIsPlaying(false),
         onstop: () => setIsPlaying(false),

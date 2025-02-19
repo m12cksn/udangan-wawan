@@ -30,7 +30,7 @@ export default function Home() {
   };
   return (
     <div className="">
-      {/* {isMusicPlaying && <AudioPlayer audioSrc="music/music.MP3" />} */}
+      {isMusicPlaying && <AudioPlayer audioSrc="music/music.MP3" />}
       {showOpening && <Opening onButtonClick={handleButtonClick} />}
       {!showOpening && <Main />}
       {!showOpening && <Section2 />}
