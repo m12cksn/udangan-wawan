@@ -5,13 +5,15 @@ import { poppins } from "./fonts";
 
 export const metadata = {
   title: "Undangan Arsyad",
-  description: "Undangan Walimatul Khitan Arsyad Haafizh Virendra",
+  description:
+    "Undangan Walimatul Khitan dan Khotmil Quran Arsyad Haafizh Virendra",
   icons: {
     icon: "/favicon.ico", // Pastikan sesuai dengan path di folder public
   },
   openGraph: {
     title: "Undangan Arsyad",
-    description: "Walimatul Khitan Arsyad Haafizh Virendra",
+    description:
+      "Undangan Walimatul Khitan dan Khotmil Quran Arsyad Haafizh Virendra",
     url: "https://undanganarsyad.vercel.app",
     type: "website",
     images: [

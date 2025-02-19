@@ -80,6 +80,7 @@ const Ending = () => {
           <h1 className={` mt-3 text-white mb-4`}>
             Bpk. Wawan Ruswanto & Ibu Dwi Rahmatika
           </h1>
+          <h1 className={` text-white mb-4`}>Owner Wahana Game</h1>
         </div>
       </BackgroundImage>
     </div>

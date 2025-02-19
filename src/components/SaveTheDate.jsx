@@ -25,7 +25,7 @@ const SaveTheDate = () => {
 
       day: "Minggu, 23 Februari, 2025",
       time: "Ba'da Isya",
-      alamat: "Bersama Habib Abdillah Bin Al Jilani - ",
+      alamat: "Bersama Habib Abdillah Bin Al Jilani",
     },
     {
       title: "Resepsi",
@@ -80,7 +80,7 @@ const SaveTheDate = () => {
                     </span>
                     {content.time}
                   </h1>
-                  <h1 className="text-center  text-lg px-3 text-slate-600  flex items-start">
+                  <h1 className="text-center  text-lg px-3 text-slate-600 font-semibold flex items-start">
                     {content.alamat}
                   </h1>
                 </div>

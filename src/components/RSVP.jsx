@@ -93,7 +93,7 @@ const RSVP = () => {
                 onClick={handleSubmit}
                 className="px-5 py-1 bg-purple-500 rounded shadow text-slate-100"
               >
-                Submit
+                Kirim
               </button>
             </div>
           </div>
